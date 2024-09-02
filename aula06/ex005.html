@@ -13,16 +13,24 @@
     </style>
 </head>
 <body>
-    <h1>Primeiros passos com o DOM</h1>
+    <h1 id="titulo">Primeiros passos com o DOM</h1>
+    <h1>Selecionando objetos por tag/id/class/name</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <p class="save">Jesus saves bro</p>
     <div>Clique em mim</div>
     <script>
         var corpo = document.body
         var p1 = document.getElementsByTagName('p')[0]
+        var h = document.getElementById('titulo')
         window.document.write(`O resultado será: ${p1.innerText}`)
         p1.style.color = 'blue'
+        window.document.getElementByTagName
         corpo.style.background = 'black'
+        h.style.background = 'green'
+        h.innerText = 'Deus é maior'
+        var s = document.querySelector('p.save')
+        s.style.color = 'red'
     </script>
 </body>
 </html>
