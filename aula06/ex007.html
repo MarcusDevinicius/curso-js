@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        .space-math {
+            position: relative;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            max-width: 500px;
+            height: 200px;
+            background-color: rgb(83, 172, 245);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px rgb(182, 182, 102);
+        }
+        div.calc {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            width: 430px;
+        }
+        div.space-math h1 {
+            text-align: center;
+        }
+        p#res {
+            position: absolute;
+            top: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div class="space-math">
+        <h1>Somando valores</h1>
+        <div class="calc">
+            <input type="number" name="txtn1" id="txtn1"> +
+            <input type="number" name="txtn2" id="txtn2">
+            <input type="button" value="Somar" onclick="somar()">
+        </div>
+        <p id="res"></p>
+    </div>
+    <script>
+        function somar(){
+            var tn1 = document.getElementById('txtn1')
+            var tn2 = document.getElementById('txtn2')
+            var r = document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            r.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>.` //*Em .innerHTML pode-se atribuir elemntos html para modificar o texto por exemplo*//
+        }
+    </script>
+</body>
+</html>
