@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condições JS</title>
+</head>
+<body>
+    <h1>Sistemas de Multas</h1>
+    Velocidade do carro: <input type="number" name="velo" id="velo"> Km/h
+    <input type="button" value="Verificar" onclick="veri()">
+    <p id="res"></p>
+    
+    <script>
+        function veri() {
+            var velo = document.getElementById('velo')
+            var km = Number(velo.value)
+            var res = document.getElementById('res')
+            if (km > 80) {
+                res.innerHTML = `Sua velocidade é de <strong>${km}Km/h</strong> e está acima do limite de 80Km/h. Você será multado.`
+                
+            }
+            else {
+                res.innerHTML = `Sua velocidade é de <strong>${km}Km/h</strong> você está dentro do limite. Continue assim.`
+            }    
+            res.innerHTML += '<p>Use sempre o cinto de segurança.</p>'
+        }
+    </script>
+</body>
+</html>
