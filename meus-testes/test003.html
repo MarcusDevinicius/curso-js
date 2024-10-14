@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTING</title>
+</head>
+<body>
+    <h1>Boas vindas para o usuário.</h1>
+    <p>Olá, Qual o seu nome? </p>
+    <input type="text" name="txt1" id="txt1">
+    <input type="submit" onclick="enviar()">
+    <p id="greeting"> </p>
+    <script>
+        function enviar () {
+            var txt = document.getElementById('txt1')
+            var nome = txt.value
+            var r = document.getElementById('greeting')
+            r.innerText = `Seja bem vindo(a) ${nome}.`
+        }
+    </script>
+</body>
+</html>

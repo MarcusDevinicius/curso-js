@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Usando DOM e interagindo com o usuário.</h1>
+    <h2>Somando valores</h2>
+    <label for="in1">Peimeiro número</label>
+    <input type="number" name="n1" id="in1"> +
+    <label for="in2">Segundo número</label>
+    <input type="number" name="n2" id="in2">
+    <button id="btn-s" onclick="add()">Somar</button>
+    <p id="soma">
+        
+    </p>
+
+    <script>
+            function add(){
+            var pN = document.getElementById ('in1')
+            var sN = document.getElementById ('in2')
+            var n1 = Number(pN.value)
+            var n2 = Number(sN.value)
+            var soma = document.getElementById ('soma')
+            var s = n1 + n2
+            soma.innerText = `O resultado da soma entre ${n1} e ${n2} é ${s}` 
+        }
+    </script>
+</body>
+</html>
