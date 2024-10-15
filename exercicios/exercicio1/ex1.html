@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De acordo com a hora do dispositivo</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html, body {
+            background-color: rgb(240, 141, 106);
+            width: 100vw;
+            height: 100vh;
+        }
+
+        header #titulo {
+            height: 150px;
+            color: white;
+            font-size: 35px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        main {
+            background-color: white;
+            width: 80vw;
+            height: 450px;
+            margin: auto;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 4px 3px rgba(0, 0, 0, 0.333);
+        }
+
+        main > h2 {
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        main > #img {
+            height: 350px;
+            width: 350px;
+            display: block;
+            margin: auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Hora do dia</h1>
+    </header>
+    <main>
+        <h2 id="horario">Agora são 12 horas</h2>
+        <img src="src/imagens/amanhecer2.jpg" alt="Imagem de paisagem de manhã" id="img">
+    </main>
+
+    <script>
+        var atual = new Date()
+        var hora = atual.getHours()
+        var horario = document.getElementById('horario')
+        if (hora >= 0 && hora <= 5) {
+            horario.innerText = `Agora são ${hora} horas`
+            
+        }
+    </script>
+</body>
+</html>
