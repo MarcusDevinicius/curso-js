@@ -61,28 +61,9 @@
     </header>
     <main>
         <h2 id="horario"></h2>
-        <img src="src/imagens/amanhecer2.jpg" alt="Imagem de paisagem de manhã" id="img">
+        <img alt="Imagem de paisagem de manhã" id="img">
     </main>
 
-    <script>
-        var atual = new Date()
-        var hora = atual.getHours()
-        var horario = document.getElementById('horario')
-        var imagem = document.getElementById('img')
-        var fundo = document.getElementById('fundo')
-        horario.innerText = `Agora são ${hora} horas.`
-        if (hora >= 0 && hora <= 5) {
-            fundo.style.backgroundColor = '#432c69'
-            horario.innerText += ' Boa Madrugada!'
-        } else if(hora <= 12) {
-            horario.innerText += ' Bom dia!'
-        } else if(hora <= 18) {
-            fundo.style.backgroundColor = '#eab300'
-            horario.innerText += ' Boa tarde!'
-        } else {
-            fundo.style.backgroundColor = '#1c1030'
-            horario.innerText += ' Boa noite!'
-        }
-    </script>
+    <script src="ex1.js"></script>
 </body>
 </html>
