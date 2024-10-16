@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>De acordo com a hora do dispositivo</title>
     <style>
+        :root {
+            --cortarde: #eab300;
+            --cornoite: #1c1030;
+        }
         * {
             padding: 0;
             margin: 0;
@@ -51,12 +55,12 @@
         }
     </style>
 </head>
-<body>
+<body id="fundo">
     <header>
         <h1 id="titulo">Hora do dia</h1>
     </header>
     <main>
-        <h2 id="horario">Agora são 12 horas</h2>
+        <h2 id="horario"></h2>
         <img src="src/imagens/amanhecer2.jpg" alt="Imagem de paisagem de manhã" id="img">
     </main>
 
@@ -64,9 +68,20 @@
         var atual = new Date()
         var hora = atual.getHours()
         var horario = document.getElementById('horario')
+        var imagem = document.getElementById('img')
+        var fundo = document.getElementById('fundo')
+        horario.innerText = `Agora são ${hora} horas.`
         if (hora >= 0 && hora <= 5) {
-            horario.innerText = `Agora são ${hora} horas`
-            
+            fundo.style.backgroundColor = '#432c69'
+            horario.innerText += ' Boa Madrugada!'
+        } else if(hora <= 12) {
+            horario.innerText += ' Bom dia!'
+        } else if(hora <= 18) {
+            fundo.style.backgroundColor = '#eab300'
+            horario.innerText += ' Boa tarde!'
+        } else {
+            fundo.style.backgroundColor = '#1c1030'
+            horario.innerText += ' Boa noite!'
         }
     </script>
 </body>
