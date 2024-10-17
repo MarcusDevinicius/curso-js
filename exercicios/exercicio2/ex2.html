@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo com o usuário</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <main id="main">
+        <p>
+            <label for="nasc">Ano de nascimento: </label>
+            <input type="number" name="nasc" id="nasc" required min="1900" max="2024" minlength="4">
+        </p>
+        <p>
+            <label for="sex">Sexo:</label>
+            <input type="radio" name="sex" id="sex" checked> Masculino
+            <input type="radio" name="sex" id="sex"> Feminino
+        </p>
+        <input type="button" value="Verificar" id="btn" onclick="clickv()">
+        <p id="result">Preencha os dados para ver o resultado</p>
+    </main>
+    <footer>
+        <p>&copy; Marcus Vinícius</p>
+    </footer>
+    <script src="ex2.js"></script>
+</body>
+</html>
