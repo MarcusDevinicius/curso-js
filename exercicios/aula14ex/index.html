@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício com repetição</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body, html {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(60, 163, 253);
+        }
+
+        #cabecalho {
+            width: 100vw;
+            height: 10vh;
+        }
+
+        #cabecalho h1 {
+            text-align: center;
+            line-height: 65px;
+            color: white;
+        }
+
+        section {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section > #input-area {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background-color: lightgray;
+            padding: 30px;
+            width: 65vw;
+            max-width: 500px;
+            height: 40vh;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+
+        section > #input-area p.inputs {
+            padding-bottom: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header id="cabecalho">
+        <h1>Let's count</h1>
+    </header>
+    <section>
+        <div id="input-area">
+            <div id="info">
+                <p class="inputs">
+                    <label for="inicio">Beginning:</label>
+                    <input type="number" name="inicio" id="inicio">
+                </p>
+                <p class="inputs">
+                    <label for="fim">End:</label>
+                    <input type="number" name="fim" id="fim">
+                </p>
+                <p class="inputs">
+                    <label for="passos">Steps:</label>
+                    <input type="number" name="passos" id="passos">
+                </p>
+                <button onclick="count()">Contar</button>
+            </div>
+            <p id="result">Preparando a contagem...</p>
+        </div>
+        <p>&copy; Marcus Vinícius</p>
+    </section>
+
+    <script>
+        function count() {
+            var beginTxt = document.getElementById('inicio')
+            var endTxt = document.getElementById('fim')
+            var stepTxt = document.getElementById('passos')
+            var begin = Number(beginTxt.value)
+            var end = Number(endTxt.value)
+            var steps = Number(stepTxt.value)
+            var result = document.getElementById('result')
+            if (steps == 0 && begin < end) {
+                window.alert("Passo inválido. Considerando passso = 1")
+                while (begin <= end) {
+                    result.innerText += `${begin}, `
+                    begin = begin + 1
+                }
+            }else if (steps == 0 && begin > end) {
+                window.alert("Passo inválido. Considerando passso = 1")
+                while (begin >= end) {
+                    result.innerText += `${begin}, `
+                    begin = begin - 1
+                }
+            }else if (begin < end) {
+                while (begin <= end) {
+                    result.innerText += `${begin}, `
+                    begin = begin + steps
+                }
+            }
+    }
+    </script>
+</body>
+</html>
