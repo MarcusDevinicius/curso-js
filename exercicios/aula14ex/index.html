@@ -99,21 +99,35 @@
             var result = document.getElementById('result')
             if (steps == 0 && begin < end) {
                 window.alert("Passo inválido. Considerando passso = 1")
+                result.innerText = 'Contando: '
                 while (begin <= end) {
-                    result.innerText += `${begin}, `
+                    result.innerText += ` ${begin}, `
                     begin = begin + 1
                 }
             }else if (steps == 0 && begin > end) {
                 window.alert("Passo inválido. Considerando passso = 1")
+                result.innerText = 'Contando: '
                 while (begin >= end) {
-                    result.innerText += `${begin}, `
+                    result.innerText += ` ${begin}, `
                     begin = begin - 1
                 }
             }else if (begin < end) {
+                result.innerText = 'Contando: '
                 while (begin <= end) {
-                    result.innerText += `${begin}, `
+                    result.innerText += ` ${begin}, `
                     begin = begin + steps
                 }
+            } else if (beginTxt.value.length  == 0 || stepTxt.value.length == 0 || endTxt.value.length == 0) {
+                window.alert('[ERRO] Impossível contar! \n' +
+                             'Digite os valores requisitados.'
+                )
+                result.innerText =  'Digite valores reais!'
+            }else {
+                result.innerText = 'Contando: '
+                do {
+                    result.innerText += ` ${begin}, `
+                    begin = begin - steps
+                }while (begin >= end)
             }
     }
     </script>
